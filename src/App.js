@@ -1,4 +1,5 @@
 import styles from './App.module.css';
+import { User } from './User';
 
 function App() {
   const name = "john";
@@ -6,15 +7,24 @@ function App() {
 
   const userAge = 18;
   const isGreen = false;
-  const names = ["JOHN", "LUKAS", "WICK", "REDDDI"];
+  const names = [{ name: "john", age: 20 },
+  { name: "michael", age: 54 },
+  { name: "tony", age: 45 }
+  ];
+
+
+
   return (
     <div className={styles.App}>
       Hello {name}of age {age}
       {userAge >= 18 ? <h1>User has age either bove 18 or 18</h1> : <h1>User has underage</h1>}
       <h1 style={{ color: isGreen ? "green" : "purple" }}>This has purple color</h1>
-      {names.map((data,key)=>{
-        return <h1 key={key}>{data}</h1>;
-})}
+      {names.map((data,key) => {
+        return <User  name={data.name}  age={data.age} />
+      })}
+
+
+
       <div>
         <GetNameComponent />
       </div>
