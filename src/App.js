@@ -6,11 +6,15 @@ function App() {
 
   const userAge = 18;
   const isGreen = false;
+  const names = ["JOHN", "LUKAS", "WICK", "REDDDI"];
   return (
     <div className={styles.App}>
       Hello {name}of age {age}
       {userAge >= 18 ? <h1>User has age either bove 18 or 18</h1> : <h1>User has underage</h1>}
       <h1 style={{ color: isGreen ? "green" : "purple" }}>This has purple color</h1>
+      {names.map((data,key)=>{
+        return <h1 key={key}>{data}</h1>;
+})}
       <div>
         <GetNameComponent />
       </div>
