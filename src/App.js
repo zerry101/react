@@ -2,6 +2,8 @@ import styles from './App.module.css';
 import { User } from './User';
 import { PlanetsComponent } from './Planets';
 import { StatesButton } from './StatesButton';
+import { StatesInput } from './StatesInnput';
+import { Todo } from './Todo';
 
 function App() {
   const name = "john";
@@ -27,6 +29,11 @@ function App() {
         return <User name={data.name} age={data.age} />
       })}
 
+
+      <div>
+        <StatesInput/>
+      </div>
+
       <div>
         <GetNameComponent />
       </div>
@@ -34,7 +41,7 @@ function App() {
         <PlanetsComponent />
       </div>
       <div>
-        <StatesButton/>
+        <StatesButton />
       </div>
       <div>
       </div>
@@ -43,6 +50,8 @@ function App() {
       <SubApp firstname="john3" personage={47} email="pqr@gmail.com" />
       <Job salary={90000} position="Senior SDE" company="Amazon"></Job>
       <Job salary={80000} position="Junior SDE" company="Microsoft"></Job>
+      <hl>----------------------------------------</hl>
+       <Todo/>
     </div>
   );
 }
