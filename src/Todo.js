@@ -4,27 +4,24 @@ export function Todo() {
 
 
     const [newTask, setNewTask] = useState("");
-    const [todoList, setTodoList] = useState(["fsfsfs","afdsfdsfsd"]);
-
+    const [todoList, setTodoList] = useState(["fsfsfs", "afdsfdsfsd", "dgfdgfdgfdg"]);
     const hanldleNewtask = (event) => {
         setNewTask(event.target.value)
     }
 
-    const pushValueToList=()=>{
+    const [elementValue,setElementValue]=useState("")
 
-        const newTodoList=[ ...todoList, newTask];
-        setTodoList([...todoList,newTask]);
+    const pushValueToList = () => {
+
+        const newTodoList = [...todoList, newTask];
+        setTodoList([...todoList, newTask]);
     }
 
 
-    const deleteTask=(task)=>{
-        console.log('====================================');
-        console.log(todoList);
-        console.log('====================================');
-        const deletedList=todoList.splice(todoList.indexOf(task),1);
-        console.log('====================================');
-        console.log(deletedList);
-        console.log('====================================');
+    const deleteTask = (taskIndex) => {
+        todoList.splice(taskIndex, 1);
+        setTodoList([...todoList]);
+        // setTodoList(["df","dfd"]);
     }
 
     return (
@@ -33,7 +30,34 @@ export function Todo() {
             <button onClick={pushValueToList}>Add This task</button>
 
             {todoList.map((task, index) => {
-                return <div><h1>{task}</h1><button onClick={(task)=>{deleteTask(task)}}></button></div>;
+                return <div key={index}><h1>{task} {index} </h1>
+                    <button onClick={() => {
+                        deleteTask(index)
+                    }}>
+                        X
+                    </button>
+                    <button>
+                        <input type='text'
+                            onChange={(event) => {
+
+                                //  todoList.splice(index,1,event.target.value);
+                                todoList.splice(index, 1, event.target.value)
+                                setTodoList([...todoList]);
+                            }}
+                        /> Update
+                    </button>
+                    <input 
+                    onChange={(event)=>{
+                        setElementValue(event.target.value)
+                    }}
+                    / >
+                    <button  onClick={()=>{
+                        todoList.splice(index,1,elementValue);
+                        setTodoList([...todoList]);
+                    }}>
+                        Update By click
+                    </button>
+                </div>;
             })}
         </div>
     );
