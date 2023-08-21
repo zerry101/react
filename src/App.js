@@ -4,7 +4,6 @@ import { PlanetsComponent } from "./Planets";
 import { StatesButton } from "./StatesButton";
 import { StatesInput } from "./StatesInnput";
 import { Todo } from "./Todo";
-import { CrudApp } from "./CrudApp";
 
 function App() {
   const name = "john";
@@ -52,8 +51,6 @@ function App() {
       <Job salary={80000} position="Junior SDE" company="Microsoft"></Job>
       <hl>----------------------------------------</hl>
       <Todo />
-      <TestApp name="Zishan" age={22} address="abad" />
-      <CrudApp />
     </div>
   );
 }
@@ -76,16 +73,6 @@ const SubApp = (props) => {
       <h1>{props.firstname}</h1>
       <h1>{props.personage}</h1>
       <h1>{props.email}</h1>
-    </div>
-  );
-};
-
-const TestApp = (props) => {
-  return (
-    <div>
-      <h1>{props.name}</h1>
-      <h1>{props.age}</h1>
-      <h1>{props.address}</h1>
     </div>
   );
 };
