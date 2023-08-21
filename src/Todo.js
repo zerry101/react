@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export function Todo() {
   const [newTask, setNewTask] = useState("");
@@ -14,7 +14,7 @@ export function Todo() {
   const [elementValue, setElementValue] = useState("");
 
   const pushValueToList = () => {
-    const newTodoList = [...todoList, newTask];
+    // const newTodoList = [...todoList, newTask];
     setTodoList([...todoList, newTask]);
   };
 

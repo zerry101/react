@@ -4,6 +4,7 @@ import { PlanetsComponent } from "./Planets";
 import { StatesButton } from "./StatesButton";
 import { StatesInput } from "./StatesInnput";
 import { Todo } from "./Todo";
+import { CrudApp } from "./CrudApp";
 
 function App() {
   const name = "john";
@@ -43,7 +44,9 @@ function App() {
       <div>
         <StatesButton />
       </div>
-      <div></div>
+      {/* <div>
+        <CrudApp />
+      </div> */}
       <SubApp firstname="john1" personage={45} email="xyz@gmail.com" />
       <SubApp firstname="john2" personage={46} email="abc@gmail.com" />
       <SubApp firstname="john3" personage={47} email="pqr@gmail.com" />

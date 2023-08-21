@@ -18,12 +18,22 @@ export const CrudApp = () => {
     SetInputValue(event.target.value);
   };
 
+  const deleElem = (index) => {
+    dataSet.splice(index, 1);
+    setDataSet([...dataSet]);
+    console.log(index);
+    console.log("clicked");
+    console.log(dataSet);
+  };
+
   return (
     <div>
       <button onClick={insertData}>
         <input type="text" onChange={handelInputChange} />
         Insert Data
       </button>
+      <button></button>
+
       {dataSet.map((item, index) => (
         <div key={index}>
           <h1>
@@ -32,6 +42,13 @@ export const CrudApp = () => {
           </h1>
           <h1>
             <button onClick={IncreaseCount}>{count} </button>
+            <button
+              onClick={() => {
+                deleElem(index);
+              }}
+            >
+              Delete
+            </button>
           </h1>
         </div>
       ))}
